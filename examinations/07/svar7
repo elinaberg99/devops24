@@ -1,0 +1,23 @@
+# QUESTION A
+
+Make similar changes to this playbook that we did for the _nginx_ server, so that
+the `mariadb` service starts automatically at boot, and is started when the playbook
+is run.
+
+# QUESTION B
+
+### When you have run the playbook above successfully, how can you verify that the `mariadb` service is started and is running?
+Antingen genom db servern och köra:
+```
+systemctl status mariadb
+```
+eller via ansible:
+```
+ansible db -m ansible.builtin.shell -a "systemctl status mariadb"
+```
+
+
+# BONUS QUESTION
+
+### How many different ways can use come up with to verify that the `mariadb` service is running?
+De tidigare två och man kan även kolla att den lyssnar på rätt port via en yml fil. 
