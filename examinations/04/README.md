@@ -51,14 +51,12 @@ Is the response what we expected?
 Refer to the documentation for the [ansible.builtin.service](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html)
 module.
 
-How can we make the web server start with an addition of just one line to the playbook above?
+### How can we make the web server start with an addition of just one line to the playbook above?
 
 # QUESTION B
 
-You make have noted that the `become: true` statement has moved from a specific task to the beginning
-of the playbook, and is on the same indentation level as `tasks:`.
+### You may have noted that the `become: true` statement has moved from a specific task to the beginning of the playbook, and is on the same indentation level as `tasks:`. What does this accomplish?
 
-What does this accomplish?
 
 # QUESTION C
 

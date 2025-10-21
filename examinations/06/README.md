@@ -115,9 +115,7 @@ In the `06-web.yml` playbook, add a couple of tasks:
 HINTS:
 * The module for creating a directory is, somewhat counterintuitively, called
 [ansible.builtin.file](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html)
-* If you want to serve files under a non-standard directory (such as the one we create above), we must
-  also set the correct SELinux security context type on the directory and files. The context in question
-  in this case should be `httpd_sys_content_t` for the `/var/www/example.internal/html/` directory.
+* If you want to serve files under a non-standard directory (such as the one we create above), we must  also set the correct SELinux security context type on the directory and files. The context in question in this case should be `httpd_sys_content_t` for the `/var/www/example.internal/html/` directory.
 
 # QUESTION B
 
@@ -165,7 +163,8 @@ See https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditional
 
 There are several ways to accomplish this, and there is no _best_ way to do this with what we've done so far.
 
-Is this a good way to handle these types of conditionals? What do you think?
+### Is this a good way to handle these types of conditionals? What do you think?
+
 
 # BONUS QUESTION
 

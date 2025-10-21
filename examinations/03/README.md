@@ -115,15 +115,16 @@ Now the output looks like this:
     dbserver    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
     webserver   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
-Run the exact same playbook again and study the output. What is the difference?
+### Run the exact same playbook again and study the output. What is the difference?
+
 
 ## QUESTION A
 
-What does the `ansible.builtin.debug` module actually do?
+### What does the `ansible.builtin.debug` module actually do?
 
 ## QUESTION B
 
-What is the variable 'ansible_facts' and where does it come from?
+### What is the variable 'ansible_facts' and where does it come from?
 
 ## QUESTION C
 
@@ -136,12 +137,16 @@ playbook `03-uninstall-software.yml`.
 
 ## BONUS QUESTION
 
-What happens when you run `ansible-playbook` with different options?
+### What happens when you run `ansible-playbook` with different options?
 
-Explain what each of these options do:
-* --verbose, -vv, -vvv, -vvvv
-* --check
-* --syntax-check
+### Explain what each of these options do:
+### * --verbose, -vv, -vvv, -vvvv
+skriver ut debug meddelanden så att man kan se vart något går fel om det gör det, ju fler 'v' desto mer debug meddelanden
+### * --check
+För att kolla vad programmet kommer att göra utan att faktiskt köra det, om man tex vill först kolla så att man gjort rätt för att inte råka förstöra något.
+### * --syntax-check
+checkar programmet för syntax fel utan att köra programmet
+
 
 ## Study Material & Documentation
 

@@ -1,0 +1,22 @@
+### Run the exact same playbook again and study the output. What is the difference?
+
+Den första gången hade något changed, men andra gången jag körde så var det changed=0 i och med att paketen då redan är installerade.
+
+## QUESTION A
+
+### What does the `ansible.builtin.debug` module actually do?
+Den printar ut statements när man kör och kan användas för att debugga
+
+## QUESTION B
+
+### What is the variable 'ansible_facts' and where does it come from?
+Den tar fakta från systemet, alltså operativsystem, IP-adresser, filsystem osv från den dator jag kör ifrån. 
+
+## QUESTION C
+
+We now know how to use Ansible to perform changes, and to ensure these changes are still there
+next time we run the playbook. This is a concept called _idempotency_.
+
+How do we now remove the software we installed through the playbook above? Make the
+playbook remove the exact same software we previously installed. Call the created
+playbook `03-uninstall-software.yml`.

@@ -1,0 +1,27 @@
+# QUESTION A
+
+Refer to the documentation for the [ansible.builtin.service](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html)
+module.
+
+### How can we make the web server start with an addition of just one line to the playbook above?
+state: started
+i och med att enabled: true bara gör att nginx startas vid boot, inte att den startas nu när playbooken körs.
+
+# QUESTION B
+
+### You may have noted that the `become: true` statement has moved from a specific task to the beginning of the playbook, and is on the same indentation level as `tasks:`. What does this accomplish?
+Det är för att alla tasks ska köras med sudo och inte bara en specifik task. Annars hade man behövt skriva det på flera ställen vilket är onödigt. 
+
+# QUESTION C
+
+Copy the above playbook to a new playbook. Call it `04-uninstall-webserver.yml`.
+
+Change the ordering of the two tasks. Make the web server stop, and disable it from starting at boot, and
+make sure that `nginx` is uninstalled. Change the `name:` parameter of each task accordingly.
+
+Run the new playbook, then make sure that the web server is not running (you can use `curl` for this), and
+log in to the machine and make sure that there are no `nginx` processes running.
+
+### Why did we change the order of the tasks in the `04-uninstall-webserver.yml` playbook?
+Om vi kör i den ordningen som var från början så avinstalleras nginx först och sen när vi ska disable nginx att starta vid boot så finns inte nginx och därför blir det ingen change. Jag gjorde båda ordningarna för att testa och med omvänd ordning blev det changed=2 men om man inte gjorde det omvända blev det endast changed=1
+
