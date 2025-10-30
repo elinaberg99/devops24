@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Nackademin!</title>
+    <style>
+      /* ===== Bakgrund & animation ===== */
+      body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(270deg, #f8c8dc, #d8b4f8, #b5e3f0);
+        background-size: 600% 600%;
+        animation: gradientMove 12s ease infinite;
+        color: #5a2a6b;
+        text-align: center;
+        position: relative;
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* ===== Bubblor ===== */
+      .bubble {
+        position: absolute;
+        bottom: -100px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 182, 193, 0.3)
+        );
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: rise 20s infinite ease-in;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(-120vh) scale(1.3);
+          opacity: 0;
+        }
+      }
+
+      /* Olika storlekar, positioner och tidsfördröjningar för variation */
+      .bubble:nth-child(1) {
+        left: 10%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+      }
+      .bubble:nth-child(2) {
+        left: 25%;
+        width: 90px;
+        height: 90px;
+        animation-delay: 3s;
+      }
+      .bubble:nth-child(3) {
+        left: 40%;
+        width: 40px;
+        height: 40px;
+        animation-delay: 6s;
+      }
+      .bubble:nth-child(4) {
+        left: 55%;
+        width: 120px;
+        height: 120px;
+        animation-delay: 1.5s;
+      }
+      .bubble:nth-child(5) {
+        left: 70%;
+        width: 70px;
+        height: 70px;
+        animation-delay: 4s;
+      }
+      .bubble:nth-child(6) {
+        left: 85%;
+        width: 100px;
+        height: 100px;
+        animation-delay: 2s;
+      }
+
+      /* ===== Text ===== */
+      h1 {
+        font-size: 3.2rem;
+        background: linear-gradient(45deg, #ff7eb9, #a18cd1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5);
+        margin-bottom: 10px;
+        z-index: 2;
+      }
+
+      p {
+        font-size: 1.3rem;
+        margin: 6px 0;
+        z-index: 2;
+      }
+
+      a {
+        color: #a855f7;
+        text-decoration: none;
+        font-weight: bold;
+        position: relative;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #fda4af, #c084fc);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+
+      a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 15px;
+        font-size: 0.9rem;
+        color: #7c3aed;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Bubblorna -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <!-- Textinnehåll -->
+    <h1> 💜 Hello Nackademin! 💜 </h1>
+    <p>Välkommen till den mest fabulösa sidan på internet 💅</p>
+    <p>
+      Den här sidan har laddats upp med
+      <a href="https://www.ansible.com" target="_blank">Ansible</a> 🪄
+    </p>
+    <footer>Made with 💜 and floating pastel dreams</footer>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Ensure deploy user has password set
+      ansible.builtin.user:
+        name: deploy
+        password: "$6$FntbEBVJScCZ./Ba$l7vps/Q.BhtJ9SyNNSfFZP./W/jpKGVm8eWT9TGdzOO9PsiTgT..vB641i3a7.mEN5pv2AV5Bu184cI232YWI0"  # 'hunter12'
+
+    - name: Ensure deploy has a valid sudo rule (with password)
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers.d/deploy
+        state: present
+        regexp: '^deploy ALL='
+        line: 'deploy ALL=(ALL) ALL'
+        validate: '/usr/sbin/visudo -cf %s'
+
+    - name: Remove any NOPASSWD sudo rule for deploy
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers.d/deploy
+        regexp: '^deploy ALL=\(ALL\) NOPASSWD: ALL'
+        state: absent
+        validate: '/usr/sbin/visudo -cf %s'

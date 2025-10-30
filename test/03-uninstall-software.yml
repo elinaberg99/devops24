@@ -1,0 +1,9 @@
+---
+    - name: Delete all of our favorite software
+      hosts: all
+      tasks:
+        - name: Delete vim, bash-completion, and qemu->
+          become: true
+          ansible.builtin.package:
+            name: vim,bash-completion,qemu-guest-agent
+            state: absent
